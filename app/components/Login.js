@@ -50,7 +50,7 @@ export default class Login extends Component {
       <View style={styles.container}>
         <View behavior="padding" style={styles.container}>
           <View style={styles.logoContainer}>
-            <Image style={styles.logo} source={require("./banana.png")} />
+            <Image style={styles.logo} source={require("./Busysalon.jpg")} />
             <Text style={styles.subtext}>My Cool App</Text>
           </View>
           <KeyboardAvoidingView style={styles.keyboard}>
@@ -116,7 +116,7 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#16a085"
+    backgroundColor: "ffffff"
   },
   logoContainer: {
     alignItems: "center",

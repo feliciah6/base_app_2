@@ -14,7 +14,7 @@ react-native run-android
 npm install
 
 
-react_native start refsregbjd
+
 
 
 recat native link

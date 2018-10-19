@@ -50,7 +50,7 @@ export default class Login extends Component {
       <View style={styles.container}>
         <View behavior="padding" style={styles.container}>
           <View style={styles.logoContainer}>
-            <Image style={styles.logo} source={require("./Busysalon.jpg")} />
+            <Image style={styles.logo} source={require("./logs.png")} />
             <Text style={styles.subtext}>My Cool App</Text>
           </View>
           <KeyboardAvoidingView style={styles.keyboard}>
@@ -94,18 +94,18 @@ export default class Login extends Component {
           <Text
             style={styles.buttonText}
             onPress={() => this.props.navigation.navigate("Register")}
-            title="Sign up"
+            title="REGISTER"
           >
-            Sign up
+            REGISTER
           </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text
             style={styles.buttonText}
             onPress={() => this.props.navigation.navigate("ForgetPassword")}
-            title="Forget Password"
+            title="LOGIN"
           >
-            Forget Password
+            LOGIN
           </Text>
         </TouchableOpacity>
       </View>
@@ -116,7 +116,7 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "ffffff"
+    backgroundColor: "#ffffff"
   },
   logoContainer: {
     alignItems: "center",
@@ -152,13 +152,14 @@ const styles = StyleSheet.create({
     fontWeight: "700"
   },
   button: {
-    backgroundColor: "#27ae60",
+    backgroundColor: "#C7367E",
     paddingVertical: 15,
     padding: 20,
     marginBottom: 5,
     marginTop: 5,
     marginRight: 20,
     marginLeft: 20,
+    borderRadius:50,
   },
   input: {
     height: 40,

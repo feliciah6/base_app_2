@@ -55,7 +55,7 @@ export default class Register extends Component {
     return (
       <View behavior="padding" style={styles.container}>
         <View style={styles.logoContainer}>
-          <Image style={styles.logo} source={require("./Busysalon.jpg")} />
+          <Image style={styles.logo} source={require("./logs.png")} />
           <Text style={styles.subtext}>Create Account</Text>
         </View>
         <KeyboardAvoidingView>

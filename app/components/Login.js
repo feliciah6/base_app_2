@@ -51,7 +51,7 @@ export default class Login extends Component {
         <View behavior="padding" style={styles.container}>
           <View style={styles.logoContainer}>
             <Image style={styles.logo} source={require("./logs.png")} />
-            <Text style={styles.subtext}>My Cool App</Text>
+            <Text style={styles.subtext}>Hair care</Text>
           </View>
           <KeyboardAvoidingView style={styles.keyboard}>
             <View style={styles.window}>
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     height: 150
   },
   subtext: {
-    color: "#ffffff",
+    color: "#C7367E",
     width:'100%',
     textAlign: "center",
     fontSize: 35,

@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#C7367E",
     paddingVertical: 15,
     padding: 20,
-    marginBottom: 5,
+    marginBottom: 80,
     marginTop: 5,
     marginRight: 20,
     marginLeft: 20,

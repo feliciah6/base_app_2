@@ -53,42 +53,7 @@ export default class Login extends Component {
             <Image style={styles.logo} source={require("./logs.png")} />
             <Text style={styles.subtext}>Hair care</Text>
           </View>
-          <KeyboardAvoidingView style={styles.keyboard}>
-            <View style={styles.window}>
-              <TextInput
-                placeholder="Enter Username"
-                placeholderTextColor="rgba(255,255,255,0.7)"
-                returnKeyType="next"
-                onSubmitEditing={() => this.passwordInput.focus()}
-                keyboardType="email-address"
-                autoCapitalize="none"
-                autoCorrect={false}
-                value={this.state.email}
-                style={styles.input}
-                onChangeText={email => this.setState({ email })}
-              />
-            </View>
-
-            <View style={styles.window}>
-              <TextInput
-                placeholder="Enter Password"
-                placeholderTextColor="rgba(255,255,255,0.7)"
-                returnKeyType="go"
-                secureTextEntry
-                ref={input => (this.passwordInput = input)}
-                value={this.state.password}
-                style={styles.input}
-                onChangeText={password => this.setState({ password })}
-              />
-            </View>
-
-            <TouchableOpacity
-              style={styles.buttonContainer}
-              onPress={this.onLoginPress.bind(this)}
-            >
-              <Text style={styles.buttonText}>LOGIN</Text>
-            </TouchableOpacity>
-          </KeyboardAvoidingView>
+         
         </View>
         <TouchableOpacity style={styles.button}>
           <Text

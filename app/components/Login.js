@@ -4,6 +4,7 @@ import {
   KeyboardAvoidingView,
   TouchableOpacity,
   AsyncStorage,
+  Button,
   Image,
   TextInput,
   StyleSheet, // CSS-like styles
@@ -51,7 +52,7 @@ export default class Login extends Component {
         <View behavior="padding" style={styles.container}>
           <View style={styles.logoContainer}>
             <Image style={styles.logo} source={require("./logs.png")} />
-            <Text style={styles.subtext}>Hair care</Text>
+            <Text style={styles.subtext}>Hair Care</Text>
           </View>
          
         </View>
@@ -73,6 +74,15 @@ export default class Login extends Component {
             LOGIN
           </Text>
         </TouchableOpacity>
+
+        <View style = {styles.buttons}>
+         <TouchableOpacity>
+            <Text style = {styles.texts}>
+               Facebook
+            </Text>
+         </TouchableOpacity>
+        </View>
+
       </View>
     );
   }
@@ -83,6 +93,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ffffff"
   },
+  buttons: {
+      alignItems: 'center',
+   },
+  texts: {
+      borderWidth: 1,
+      padding: 25,
+      borderColor: 'black',
+      backgroundColor:  'red'
+   }
   logoContainer: {
     alignItems: "center",
     flexGrow: 1,

@@ -8,7 +8,7 @@ import {
   TouchableHighlight,
   Image,
   KeyboardAvoidingView,
-  AsyncStorage
+  AsyncStorage,
 } from "react-native";
 
 import { StackNavigator } from "react-navigation";
@@ -50,12 +50,13 @@ export default class Register extends Component {
     await AsyncStorage.setItem("password", password);
     this.props.navigation.navigate("Boiler");
   }
+  
+  
 
   render() {
     return (
       <View behavior="padding" style={styles.container}>
         <View style={styles.logoContainer}>
-          <Image style={styles.logo} source={require("./logs.png")} />
           <Text style={styles.subtext}>Create Account</Text>
         </View>
         <KeyboardAvoidingView>
@@ -122,27 +123,32 @@ export default class Register extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#16a085",
+    backgroundColor: "#36485f",
     padding: 20,
     paddingTop: 100
   },
+  
   logoContainer: {
     alignItems: "center",
     flexGrow: 1,
     justifyContent: "center",
     alignItems: "center"
   },
+  
   logo: {
     width: 200,
     height: 150
   },
   input: {
     height: 40,
-    width: 350,
-    marginBottom: 10,
-    backgroundColor: "rgba(255,255,255,0.2)",
+    alignSelf:"stretch"
+    marginBottom: 40,
+    paddingBottom:10,
+    borderBottomColor:#ffffff,
+    borderBottomWidth:1,
+    
     color: "#fff",
-    paddingHorizontal: 10
+   
   },
   button: {
     height: 50,

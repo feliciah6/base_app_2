@@ -62,7 +62,7 @@ export default App = StackNavigator({
   ForgetPassword: {
     screen: ForgetPassword,
     navigationOptions: {
-      title: "ForgetPassword"
+      title: "Login"
     }
   },
   HomeScreen: {

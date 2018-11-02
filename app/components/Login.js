@@ -4,7 +4,6 @@ import {
   KeyboardAvoidingView,
   TouchableOpacity,
   AsyncStorage,
-  Button,
   Image,
   TextInput,
   StyleSheet, // CSS-like styles
@@ -46,7 +45,7 @@ export default class Login extends Component {
     await AsyncStorage.setItem("password", password);
     this.props.navigation.navigate("HomeScreen");
   }
-  render() {
+  render() {     
     return (
       <View style={styles.container}>
         <View behavior="padding" style={styles.container}>
@@ -54,9 +53,8 @@ export default class Login extends Component {
             <Image style={styles.logo} source={require("./logs.png")} />
             <Text style={styles.subtext}>Hair Care</Text>
           </View>
-         
-        </View>
-        <TouchableOpacity style={styles.button}>
+          </View>
+         <TouchableOpacity style={styles.button}>
           <Text
             style={styles.buttonText}
             onPress={() => this.props.navigation.navigate("Register")}
@@ -74,15 +72,6 @@ export default class Login extends Component {
             LOGIN
           </Text>
         </TouchableOpacity>
-
-        <View style = {styles.buttons}>
-         <TouchableOpacity>
-            <Text style = {styles.texts}>
-               Facebook
-            </Text>
-         </TouchableOpacity>
-        </View>
-
       </View>
     );
   }
@@ -93,15 +82,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ffffff"
   },
-  buttons: {
-      alignItems: 'center',
-   },
-  texts: {
-      borderWidth: 1,
-      padding: 25,
-      borderColor: 'black',
-      backgroundColor:  'red'
-   }
   logoContainer: {
     alignItems: "center",
     flexGrow: 1,
@@ -113,7 +93,7 @@ const styles = StyleSheet.create({
     height: 150
   },
   subtext: {
-    color: "#C7367E",
+     color: "#C7367E",
     width:'100%',
     textAlign: "center",
     fontSize: 35,
@@ -139,6 +119,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#C7367E",
     paddingVertical: 15,
     padding: 20,
+    height: 60,
     marginBottom: 80,
     marginTop: 5,
     marginRight: 20,

@@ -6,7 +6,8 @@ import {
   View,
   Button,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  TouchableHighlight
 } from "react-native";
 
 export default class ForgetPassword extends Component {
@@ -15,11 +16,12 @@ export default class ForgetPassword extends Component {
     this.state = {
       email: "",
       password: "",
+      type:"",
     };
   }
   static navigationOptions = {
     headerStyle: {
-      backgroundColor: "#16a085",
+      backgroundColor: "#36485f",
       elevation: null,
     },
     headerTitleStyle: {
@@ -49,12 +51,33 @@ export default class ForgetPassword extends Component {
           value={this.state.email}
           onChangeText={email => this.setState({ email })}
         />
-        <TouchableOpacity
-          style={styles.buttonContainer}
+         <TextInput
+          placeholder="Password"
+          placeholderTextColor="rgba(255,255,255,0.7)"
+          keyboardType="email-address"
+          autoCapitalize="none"
+          autoCorrect={false}
+          style={styles.input}
+          value={this.state.email}
+          onChangeText={email => this.setState({ email })}
+        />
+        <TextInput
+          placeholder="Type"
+          placeholderTextColor="rgba(255,255,255,0.7)"
+          keyboardType="email-address"
+          autoCapitalize="none"
+          autoCorrect={false}
+          style={styles.input}
+          value={this.state.email}
+          onChangeText={email => this.setState({ email })}
+        />
+        
+        <TouchableHighlight
           onPress={this.onForgetPress.bind(this)}
+          style={styles.button}
         >
-          <Text style={styles.buttonText}>Forget Password</Text>
-        </TouchableOpacity>
+          <Text style={styles.buttonText}>LOGIN</Text>
+        </TouchableHighlight>
       </View>
     );
   }
@@ -64,7 +87,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1.2,
     justifyContent: "flex-start",
-    backgroundColor: "#16a085",
+    backgroundColor: "#36485f",
     padding: 20,
     paddingTop: 100
   },
@@ -75,11 +98,25 @@ const styles = StyleSheet.create({
     color: "#fff",
     paddingHorizontal: 10
   },
+  button: {
+    height: 60,
+    backgroundColor: "#C7367E",
+    borderRadius:50,
+    alignSelf: "stretch",
+    marginTop: 10,
+    justifyContent: "center",
+    paddingVertical: 15,
+    marginBottom: 10
+  },
   buttonContainer: {
     backgroundColor: "rgba(255,255,255,0.2)",
     paddingVertical: 15
   },
   buttonText: {
+    flex: 1,
+    width: '100%',
+    fontSize: 18,
+    alignSelf: "center",
     textAlign: "center",
     color: "#FFF",
     fontWeight: "700"

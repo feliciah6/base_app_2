@@ -8,7 +8,7 @@ import {
   TouchableHighlight,
   Image,
   KeyboardAvoidingView,
-  AsyncStorage,
+  AsyncStorage
 } from "react-native";
 
 import { StackNavigator } from "react-navigation";
@@ -26,7 +26,7 @@ export default class Register extends Component {
 
   static navigationOptions = {
     headerStyle: {
-      backgroundColor: "#16a085",
+      backgroundColor: "#36485f",
       elevation: null,
     },
     headerTitleStyle: {
@@ -41,30 +41,32 @@ export default class Register extends Component {
   };
 
   async onRegisterPress() {
-    const { email, password, name } = this.state;
+    const { email, password, username, phone, location, type } = this.state;
     console.log(email);
-    console.log(name);
+    console.log(phone);
+    console.log(location);
+    console.log(type);
+    console.log(username);
     console.log(password);
     await AsyncStorage.setItem("email", email);
-    await AsyncStorage.setItem("name", name);
+    await AsyncStorage.setItem("phone", phone);
+    await AsyncStorage.setItem("location", location);
+    await AsyncStorage.setItem("type", type);
+    await AsyncStorage.setItem("name", username);
     await AsyncStorage.setItem("password", password);
     this.props.navigation.navigate("Boiler");
   }
-  
-  
 
   render() {
     return (
       <View behavior="padding" style={styles.container}>
-        <View style={styles.logoContainer}>
-          <Text style={styles.subtext}>Create Account</Text>
-        </View>
+       
         <KeyboardAvoidingView>
           <TextInput
-            value={this.state.name}
-            onChangeText={name => this.setState({ name })}
+            value={this.state.username}
+            onChangeText={username => this.setState({ username })}
             style={styles.input}
-            placeholder="Name"
+            placeholder="Username"
             placeholderTextColor="rgba(255,255,255,0.7)"
             returnKeyType="next"
             onSubmitEditing={() => this.emailInput.focus()}
@@ -77,11 +79,51 @@ export default class Register extends Component {
             placeholderTextColor="rgba(255,255,255,0.7)"
             returnKeyType="next"
             ref={input => (this.emailInput = input)}
-            onSubmitEditing={() => this.passwordCInput.focus()}
+            onSubmitEditing={() => this.phoneCInput.focus()}
             keyboardType="email-address"
             autoCapitalize="none"
             autoCorrect={false}
             placeholder="Email"
+          />
+
+          <TextInput
+            value={this.state.phone}
+            onChangeText={phone => this.setState({ phone })}
+            style={styles.input}
+            placeholderTextColor="rgba(255,255,255,0.7)"
+            returnKeyType="next"
+            ref={input => (this.phoneInput = input)}
+            onSubmitEditing={() => this.passwordCInput.focus()}
+            keyboardType="Text"
+            autoCapitalize="none"
+            autoCorrect={false}
+            placeholder="Phone"
+          />
+          <TextInput
+            value={this.state.location}
+            onChangeText={location => this.setState({ location })}
+            style={styles.input}
+            placeholderTextColor="rgba(255,255,255,0.7)"
+            returnKeyType="next"
+            ref={input => (this.locationInput = input)}
+            onSubmitEditing={() => this.passwordCInput.focus()}
+            keyboardType="Text"
+            autoCapitalize="none"
+            autoCorrect={false}
+            placeholder="Location"
+          />      
+          <TextInput
+            value={this.state.type}
+            onChangeText={type => this.setState({ type })}
+            style={styles.input}
+            placeholderTextColor="rgba(255,255,255,0.7)"
+            returnKeyType="next"
+            ref={input => (this.typeInput = input)}
+            onSubmitEditing={() => this.passwordCInput.focus()}
+            keyboardType="Text"
+            autoCapitalize="none"
+            autoCorrect={false}
+            placeholder="Type"
           />
           <TextInput
             value={this.state.password}
@@ -113,7 +155,7 @@ export default class Register extends Component {
           onPress={this.onRegisterPress.bind(this)}
           style={styles.button}
         >
-          <Text style={styles.buttonText}>Register</Text>
+          <Text style={styles.buttonText}>REGISTER</Text>
         </TouchableHighlight>
       </View>
     );
@@ -125,14 +167,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#36485f",
     padding: 20,
-    paddingTop: 100
-  },
-  
-  logoContainer: {
-    alignItems: "center",
-    flexGrow: 1,
-    justifyContent: "center",
-    alignItems: "center"
+    paddingTop: 30
   },
   
   logo: {
@@ -141,18 +176,16 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    alignSelf:"stretch"
-    marginBottom: 40,
-    paddingBottom:10,
-    borderBottomColor:#ffffff,
-    borderBottomWidth:1,
-    
+    width: 350,
+    marginBottom: 10,
+    backgroundColor: "rgba(255,255,255,0.2)",
     color: "#fff",
-   
+    paddingHorizontal: 10
   },
   button: {
-    height: 50,
-    backgroundColor: "rgba(255,255,255,0.2)",
+    height: 60,
+    backgroundColor: "#C7367E",
+    borderRadius:50,
     alignSelf: "stretch",
     marginTop: 10,
     justifyContent: "center",
